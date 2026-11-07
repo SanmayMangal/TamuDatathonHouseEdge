@@ -2,7 +2,7 @@
 
 ## Entry
 
-- Team ID: TEAM_ID_HERE
+- Team: Card Sharks
 - Round: main
 - Season ID: 5fffdc4d0c700bbf61c3f911 (`public/metadata.json`)
 - Forecast file: `submission.csv` (uploaded separately; not in this ZIP)
