@@ -1,0 +1,5 @@
+condition,episodes,mean_machines_changed,median_sd_change_tick,median_span
+drift,45,3.911111111111111,43.50172410376398,106.0
+shared_change,47,4.170212765957447,42.19952606368939,102.0
+short_history,4,2.0,4.242640687119285,6.0
+stable,32,3.03125,44.0109912247207,93.5

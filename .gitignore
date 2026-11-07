@@ -3,3 +3,4 @@ __pycache__/
 *.pyc
 .ipynb_checkpoints/
 analysis/results/smoke/
+analysis/results/full/E6/per_machine_pairs.csv

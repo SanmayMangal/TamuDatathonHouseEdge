@@ -1,0 +1,162 @@
+{
+ "A": {
+  "R": 0.07903371393504229,
+  "points": 55.60530614116844,
+  "per_fold_R": [
+   0.0764180007733246,
+   0.08381165418567858,
+   0.0708288020957599,
+   0.08449486705488335
+  ],
+  "chosen": [
+   {
+    "ep_half_life": 6.0,
+    "ep_var": 0.2,
+    "machine_var": 0.05,
+    "share_strength": 60.0,
+    "rate_scale": 1.0
+   },
+   {
+    "ep_half_life": 6.0,
+    "ep_var": 0.2,
+    "machine_var": 0.05,
+    "share_strength": 60.0,
+    "rate_scale": 1.0
+   },
+   {
+    "ep_half_life": 6.0,
+    "ep_var": 0.2,
+    "machine_var": 0.05,
+    "share_strength": 60.0,
+    "rate_scale": 1.0
+   },
+   {
+    "ep_half_life": 6.0,
+    "ep_var": 0.2,
+    "machine_var": 0.05,
+    "share_strength": 60.0,
+    "rate_scale": 1.0
+   }
+  ]
+ },
+ "B": {
+  "R": 0.07906257516928403,
+  "points": 55.603818889360674,
+  "per_fold_R": [
+   0.07647790959224875,
+   0.08327451730868002,
+   0.07078955488294164,
+   0.08517807020462576
+  ],
+  "chosen": [
+   {
+    "ep_half_life": 6.0,
+    "ep_var": 0.2,
+    "machine_var": 0.05,
+    "share_strength": 60.0,
+    "rate_scale": 1.0
+   },
+   {
+    "ep_half_life": 6.0,
+    "ep_var": 0.2,
+    "machine_var": 0.05,
+    "share_strength": 60.0,
+    "rate_scale": 1.0
+   },
+   {
+    "ep_half_life": 6.0,
+    "ep_var": 0.2,
+    "machine_var": 0.05,
+    "share_strength": 60.0,
+    "rate_scale": 1.0
+   },
+   {
+    "ep_half_life": 6.0,
+    "ep_var": 0.2,
+    "machine_var": 0.05,
+    "share_strength": 60.0,
+    "rate_scale": 1.0
+   }
+  ]
+ },
+ "C": {
+  "R": 0.08097608694694607,
+  "points": 55.50539065989975,
+  "per_fold_R": [
+   0.0763052148380278,
+   0.08506838580076762,
+   0.07120320643823153,
+   0.09064356762598286
+  ],
+  "chosen": [
+   {
+    "ep_half_life": 3.0,
+    "ep_var": 0.1,
+    "machine_var": 0.1,
+    "share_strength": 60.0,
+    "rate_scale": 2.0
+   },
+   {
+    "ep_half_life": 3.0,
+    "ep_var": 0.2,
+    "machine_var": 0.1,
+    "share_strength": 120.0,
+    "rate_scale": 2.0
+   },
+   {
+    "ep_half_life": 3.0,
+    "ep_var": 0.1,
+    "machine_var": 0.1,
+    "share_strength": 60.0,
+    "rate_scale": 2.0
+   },
+   {
+    "ep_half_life": 6.0,
+    "ep_var": 0.1,
+    "machine_var": 0.02,
+    "share_strength": 30.0,
+    "rate_scale": 2.0
+   }
+  ]
+ },
+ "D": {
+  "R": 0.0810423007443743,
+  "points": 55.50199095695491,
+  "per_fold_R": [
+   0.07633961640840535,
+   0.08464881125103665,
+   0.07119740900128022,
+   0.09130907610427674
+  ],
+  "chosen": [
+   {
+    "ep_half_life": 3.0,
+    "ep_var": 0.1,
+    "machine_var": 0.1,
+    "share_strength": 60.0,
+    "rate_scale": 2.0
+   },
+   {
+    "ep_half_life": 3.0,
+    "ep_var": 0.2,
+    "machine_var": 0.1,
+    "share_strength": 120.0,
+    "rate_scale": 2.0
+   },
+   {
+    "ep_half_life": 3.0,
+    "ep_var": 0.1,
+    "machine_var": 0.1,
+    "share_strength": 60.0,
+    "rate_scale": 2.0
+   },
+   {
+    "ep_half_life": 6.0,
+    "ep_var": 0.1,
+    "machine_var": 0.02,
+    "share_strength": 30.0,
+    "rate_scale": 2.0
+   }
+  ]
+ }
+}
