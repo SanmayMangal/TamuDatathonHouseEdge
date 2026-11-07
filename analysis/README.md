@@ -55,3 +55,42 @@ somewhat (2.68 for uniform), because noise at history ticks isn't identical to n
 to compare candidates, and confirm with `against="target"` before believing a ratio.
 
 `folds(df, 5)` yields train/test masks over train+validation rows, keeping whole episodes together.
+
+## Phase 1 experiments (`phase1/`, `run_phase1.py`)
+
+```sh
+python analysis/build_table.py              # once
+python analysis/run_phase1.py               # all of E1-E9 on the full train + validation data
+python analysis/run_phase1.py --only E2,E7  # a subset
+python analysis/run_phase1.py --smoke       # 2 episodes per condition, only to check the code runs
+```
+
+Output: `analysis/results/full/report.md` (key tables per experiment), one CSV per table under
+`analysis/results/full/E*/`, and `timings.json`.
+
+**Compute.** CPU only, pandas + numpy, single process; no GPU needed. The smoke run (24k rows, 1/12 of
+the data) takes about 9 s in total, so a full run should take roughly 2–4 minutes and a few GB of RAM.
+E4 (lag pairs) and E6 (neighbors) are the slowest.
+
+**Method.** Most experiments compare a count model that conditions on a feature against the machine's
+own overall rates, on the same rows, both scored **leave-one-out** (each row's outcome is removed from the
+counts before it is predicted). Gains are Brier improvements on observed outcomes; `dR` divides by the
+reference's true error per condition, so it approximates how much R would fall. Each test has a control:
+lags 9–12, and a **null** that shuffles the feature within each machine (same mix of values, timing destroyed).
+A gain only counts if it clears its null.
+
+| | Question | Main tables |
+|---|---|---|
+| E1 | How do type and signal shift the odds? Do machines differ beyond type × signal? | `by_type_signal`, `overdispersion` |
+| E2 | Which single lags (1–12) carry signal, per machine vs shared per type? | `summary`, `machine_dR_by_condition` |
+| E3 | Do same-type machines react in opposite directions? Does signal set the direction? | `by_type_lag`, `by_type_signal_lag`, `strongest_lag` |
+| E4 | Do lag pairs carry signal beyond each lag alone (interactions)? | `top_pairs`, `interaction_by_condition` |
+| E5 | Which encoding of a lagged payout matters, and does it move win chance or payout size? | `summary` |
+| E6 | Do neighbors' earlier payouts help, via specific pairs or the whole episode? | `pairwise_by_lag`, `aggregate`, `coupling` |
+| E7 | Best memory length per condition; change points, their timing across machines, trends, synchrony. | `memory`, `memory_exact`, `changes`, `timing` |
+| E8 | Short histories: layout, and how much to trust 64 ticks vs the prior. | `layout`, `estimators` |
+| E9 | Where the reference's error is concentrated, how peaked the true odds are, label-only ceilings. | `by_group`, `truth_shape`, `ceilings` |
+
+Experiments use train + validation history rows only; test is never touched. E7, E8 and E9 also score
+exactly against validation targets, so those numbers reuse the validation answers: treat them as
+diagnostics, not as a held-out check.
